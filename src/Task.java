@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Task {
-    private String taskDescription = null;
-    private boolean isFinished = false;
+    private String taskDescription;
+    private boolean isFinished;
     private int taskNumber = 1;
     private static int count = 1;
 
