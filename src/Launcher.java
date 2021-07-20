@@ -17,7 +17,6 @@ public class Launcher {
                 System.out.println("Not valid input");
                 userChoice = 6;
             }
-
             switch (userChoice) {
                 case 1:
                     Task newTask = new Task();
