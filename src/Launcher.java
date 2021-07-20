@@ -52,12 +52,12 @@ public class Launcher {
                     System.out.print("Enter ID of finished task: ");
                     int number = scanner.nextInt();
                     if (number > list.size())
-                        System.out.println("Task with this ID is not exist");
+                        System.out.println("Task with this ID doesn't exist");
                     else {
                         for (Task listItem : list) {
                             if (listItem.getTaskNumber() == number) {
                                 if (listItem.isFinished())
-                                    System.out.println("Task with this ID already finished");
+                                    System.out.println("Task with this ID is already finished");
                                 else {
                                     listItem.setStatus(true);
                                     System.out.printf("Task with ID=%d is marked as done!\n", listItem.getTaskNumber());
