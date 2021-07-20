@@ -1,3 +1,5 @@
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -22,6 +24,7 @@ public class Launcher {
                     Task newTask = new Task();
                     newTask.addTask();
                     list.add(newTask);
+                    System.out.println("Task is added!");
                     break;
                 case 2:
                     System.out.println("\nList of all tasks:");
