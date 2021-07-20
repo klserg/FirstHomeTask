@@ -56,6 +56,8 @@ public class Launcher {
                         if (listItem.getTaskNumber() == number) {
                             listItem.setStatus(true);
                             System.out.printf("Task with ID=%d is marked as done!\n", listItem.getTaskNumber());
+                        } else {
+                            System.out.println("Task with this ID is not exist");
                         }
                     }
                     break;
