@@ -1,3 +1,5 @@
+package com.mycompany.taskmanager;
+
 import java.util.Scanner;
 
 public class Task {

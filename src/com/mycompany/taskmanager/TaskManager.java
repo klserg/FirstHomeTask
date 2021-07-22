@@ -1,3 +1,5 @@
+package com.mycompany.taskmanager;
+
 public class TaskManager {
 
     public void showMenu() {
