@@ -8,12 +8,12 @@ public class Launcher {
     public static void main(String[] args) {
 
         TaskManager taskManager = new TaskManager();
-        Scanner scanner = new Scanner(System.in);
         ArrayList<Task> list = new ArrayList<>();
         int userChoice;
         do {
             taskManager.showMenu();
             try {
+                Scanner scanner = new Scanner(System.in);
                 userChoice = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Not valid input");
@@ -21,53 +21,19 @@ public class Launcher {
             }
             switch (userChoice) {
                 case 1:
-                    Task newTask = new Task();
-                    newTask.addTask();
-                    list.add(newTask);
-                    System.out.println("Task is added!");
+                    taskManager.addTask(new Task(), list);
                     break;
                 case 2:
-                    System.out.println("\nList of all tasks:");
-                    for (Task listItem : list) {
-                        System.out.printf("ID=%d, Description: %s\n", listItem.getTaskNumber(), listItem.getTaskDescription());
-                    }
+                    taskManager.showAllTasks(list);
                     break;
                 case 3:
-                    System.out.println("\nList of finished tasks:");
-                    int count = 0;
-                    for (Task listItem : list) {
-                        if (listItem.isFinished()){
-                            count++;
-                            System.out.printf("ID=%d, Description: %s\n", listItem.getTaskNumber(), listItem.getTaskDescription());
-                        }
-                    }
-                    if (count == 0)
-                        System.out.println("List is empty");
+                    taskManager.showFinishedTasks(list);
                     break;
                 case 4:
-                    System.out.println("\nList of not finished tasks:");
-                    for (Task listItem : list) {
-                        if (!listItem.isFinished())
-                            System.out.printf("ID=%d, Description: %s\n", listItem.getTaskNumber(), listItem.getTaskDescription());
-                    }
+                    taskManager.showNotFinishedTasks(list);
                     break;
                 case 5:
-                    System.out.print("Enter ID of finished task: ");
-                    int number = scanner.nextInt();
-                    if (number > list.size())
-                        System.out.println("Task with this ID doesn't exist");
-                    else {
-                        for (Task listItem : list) {
-                            if (listItem.getTaskNumber() == number) {
-                                if (listItem.isFinished())
-                                    System.out.println("Task with this ID is already finished");
-                                else {
-                                    listItem.setStatus(true);
-                                    System.out.printf("Task with ID=%d is marked as done!\n", listItem.getTaskNumber());
-                                }
-                            }
-                        }
-                    }
+                    taskManager.markTaskAsFinished(list);
                     break;
                 default: {
                     System.out.println("End of program");

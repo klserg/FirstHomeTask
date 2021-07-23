@@ -1,7 +1,5 @@
 package com.mycompany.taskmanager;
 
-import java.util.Scanner;
-
 public class Task {
     private String taskDescription;
     private boolean isFinished;
@@ -20,19 +18,16 @@ public class Task {
         return taskDescription;
     }
 
+    public void setTaskDescription(String description) {
+        taskDescription = description;
+    }
+
     public boolean isFinished() {
         return isFinished;
     }
 
     public Task setStatus(Boolean status) {
         isFinished = true;
-        return this;
-    }
-
-    public Task addTask() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter task message:");
-        taskDescription = scanner.nextLine();
         return this;
     }
 }
